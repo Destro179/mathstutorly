@@ -10,19 +10,22 @@
   :root {
     --navy: #0f2b4a; --navy-mid: #1a3f6a; --accent: #2e82d4; --accent-light: #e8f2fb;
     --text: #1a1a2e; --muted: #5a6a7e; --border: #dce4ef; --white: #ffffff; --surface: #f7f9fc;
+    --green: #1a8f55;
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
 
+  /* NAV */
   nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); text-decoration: none; }
   .nav-logo span { color: var(--accent); }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
   .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--muted); transition: color 0.2s; }
   .nav-links a:hover { color: var(--navy); }
   .nav-cta { background: var(--accent); color: white !important; padding: 0.45rem 1.1rem; border-radius: 6px; transition: background 0.2s !important; }
-  .nav-cta:hover { background: var(--navy-mid) !important; }
+  .nav-cta:hover { background: var(--navy-mid) !important; color: white !important; }
 
+  /* HERO */
   .hero { background: var(--navy); color: white; padding: 6rem 2rem 5rem; text-align: center; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, rgba(46,130,212,0.25) 0%, transparent 65%); }
   .hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
@@ -31,21 +34,24 @@
   .hero h1 em { font-style: italic; color: #7dbfee; }
   .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 2.5rem; font-weight: 300; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: white; padding: 0.75rem 1.75rem; border-radius: 8px; border: none; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+  .btn-primary { background: var(--accent); color: white; padding: 0.75rem 1.75rem; border-radius: 8px; border: none; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block; }
   .btn-primary:hover { background: #1a6bbf; transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.35); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
+  .btn-outline { background: transparent; color: white; padding: 0.75rem 1.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.35); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
   .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
+  /* TRUST BAR */
   .trust-bar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
   .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); font-weight: 500; }
   .trust-item svg { color: var(--accent); flex-shrink: 0; }
 
+  /* SECTIONS */
   section { padding: 5rem 2rem; }
   .section-inner { max-width: 1080px; margin: 0 auto; }
   .section-label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
   .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 400; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
-  .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 520px; font-weight: 300; margin-bottom: 3rem; }
+  .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; font-weight: 300; margin-bottom: 3rem; }
 
+  /* SERVICES */
   #services { background: var(--white); }
   .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
   .service-card { border: 1px solid var(--border); border-radius: 14px; padding: 2rem; background: var(--white); transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden; }
@@ -53,17 +59,47 @@
   .service-card:hover { box-shadow: 0 8px 30px rgba(15,43,74,0.1); transform: translateY(-3px); }
   .service-year { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.78rem; font-weight: 500; padding: 0.3rem 0.75rem; border-radius: 100px; margin-bottom: 1rem; }
   .service-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.35rem; font-weight: 400; color: var(--navy); margin-bottom: 0.5rem; }
-  .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
-  .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .service-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
   .tag { font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 100px; border: 1px solid var(--border); color: var(--muted); background: var(--surface); }
 
+  /* Service included list */
+  .included-title { font-size: 0.75rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; margin-top: 0.75rem; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+  .included-list li { font-size: 0.82rem; color: var(--muted); display: flex; align-items: flex-start; gap: 0.5rem; }
+  .included-list li svg { color: var(--green); flex-shrink: 0; margin-top: 2px; }
+
+  /* WHY */
   #why { background: var(--surface); }
   .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
   .why-icon { width: 44px; height: 44px; background: var(--accent-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
   .why-item h4 { font-weight: 500; font-size: 1rem; color: var(--navy); margin-bottom: 0.4rem; }
   .why-item p { font-size: 0.9rem; color: var(--muted); }
 
-  #booking { background: var(--white); }
+  /* PRICING PAGE */
+  #pricing { background: var(--white); }
+  .pricing-intro { font-size: 0.95rem; color: var(--muted); margin-bottom: 2.5rem; max-width: 560px; }
+  .pricing-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; margin-bottom: 2rem; }
+  .pricing-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .pricing-table th { background: var(--navy); color: white; padding: 0.85rem 1.25rem; text-align: left; font-weight: 500; font-size: 0.82rem; letter-spacing: 0.04em; }
+  .pricing-table th:first-child { border-radius: 0; }
+  .pricing-table td { padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border); color: var(--text); }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-table tr:nth-child(even) td { background: var(--surface); }
+  .pricing-table .price-val { font-weight: 600; color: var(--navy); font-size: 1rem; }
+  .pricing-table .year-badge { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.75rem; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 100px; }
+  .pricing-note { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; font-size: 0.88rem; color: var(--muted); display: flex; align-items: flex-start; gap: 0.75rem; }
+  .pricing-note svg { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+  /* FREE SESSION BANNER */
+  .free-session-banner { background: linear-gradient(135deg, #e8f2fb 0%, #d4eaf8 100%); border: 1px solid #b8d6f0; border-radius: 14px; padding: 2rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+  .free-badge { background: var(--accent); color: white; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .free-badge svg { width: 26px; height: 26px; }
+  .free-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.25rem; font-weight: 400; }
+  .free-text p { font-size: 0.88rem; color: var(--muted); }
+
+  /* BOOKING */
+  #booking { background: var(--surface); }
   .booking-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
   .booking-info h2 { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; color: var(--navy); margin-bottom: 1rem; }
   .booking-info p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
@@ -71,7 +107,7 @@
   .info-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--muted); }
   .info-list li svg { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
 
-  .booking-form { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; }
+  .booking-form { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; }
   .booking-form h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; color: var(--navy); margin-bottom: 1.75rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-group { margin-bottom: 1.1rem; }
@@ -81,58 +117,66 @@
   .form-group textarea { resize: vertical; min-height: 90px; }
   .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a6a7e' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.85rem center; padding-right: 2.5rem; }
 
-  /* ── SUBMIT BUTTON STATES ── */
-  .submit-btn {
-    width: 100%; border: none; padding: 0.85rem; border-radius: 8px;
-    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
-    cursor: pointer; margin-top: 0.5rem; position: relative; overflow: hidden;
-    background: var(--accent); color: white;
-    transition: background 0.3s, transform 0.15s;
-  }
+  /* AVAILABILITY PICKER */
+  .avail-trigger { width: 100%; padding: 0.6rem 0.85rem; border: 1px solid var(--border); border-radius: 8px; background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--muted); cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center; transition: border-color 0.2s, box-shadow 0.2s; }
+  .avail-trigger:focus, .avail-trigger.active { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(46,130,212,0.12); outline: none; color: var(--text); }
+  .avail-trigger svg { color: var(--muted); transition: transform 0.2s; flex-shrink: 0; }
+  .avail-trigger.open svg { transform: rotate(180deg); }
+
+  /* MODAL OVERLAY */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15,43,74,0.5); z-index: 200; align-items: center; justify-content: center; padding: 1rem; backdrop-filter: blur(3px); }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--white); border-radius: 18px; width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 64px rgba(15,43,74,0.2); animation: slideUp 0.25s ease; }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header { padding: 1.5rem 1.75rem 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .modal-header h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--navy); font-weight: 400; }
+  .modal-close { background: none; border: none; cursor: pointer; color: var(--muted); padding: 0.25rem; border-radius: 6px; display: flex; }
+  .modal-close:hover { background: var(--surface); color: var(--navy); }
+  .modal-body { padding: 1.5rem 1.75rem; }
+  .modal-section-title { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.75rem; }
+
+  /* DAY SELECTOR */
+  .day-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem; margin-bottom: 1.5rem; }
+  .day-btn { border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem 0.2rem; background: var(--white); cursor: pointer; text-align: center; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: var(--muted); transition: all 0.15s; }
+  .day-btn .day-short { font-weight: 600; display: block; font-size: 0.8rem; color: var(--navy); }
+  .day-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .day-btn.selected { background: var(--accent); border-color: var(--accent); color: white; }
+  .day-btn.selected .day-short { color: white; }
+
+  /* TIME SLOTS */
+  .time-section { margin-bottom: 1.25rem; }
+  .time-day-label { font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+  .time-slots { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .time-slot { border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.65rem; background: var(--white); cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; color: var(--muted); transition: all 0.15s; }
+  .time-slot:hover { border-color: var(--accent); color: var(--accent); }
+  .time-slot.selected { background: var(--accent-light); border-color: var(--accent); color: var(--accent); font-weight: 500; }
+
+  .modal-footer { padding: 1rem 1.75rem 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 0.75rem; }
+  .modal-btn-secondary { background: var(--white); border: 1px solid var(--border); color: var(--muted); padding: 0.6rem 1.25rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; cursor: pointer; }
+  .modal-btn-secondary:hover { background: var(--surface); }
+  .modal-btn-primary { background: var(--accent); color: white; border: none; padding: 0.6rem 1.25rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; cursor: pointer; font-weight: 500; }
+  .modal-btn-primary:hover { background: #1a6bbf; }
+  .no-days-msg { color: var(--muted); font-size: 0.88rem; font-style: italic; padding: 0.5rem 0; }
+
+  /* SUBMIT BUTTON */
+  .submit-btn { width: 100%; border: none; padding: 0.85rem; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; margin-top: 0.5rem; position: relative; overflow: hidden; background: var(--accent); color: white; transition: background 0.3s, transform 0.15s; }
   .submit-btn:hover:not(:disabled) { background: #1a6bbf; transform: translateY(-1px); }
   .submit-btn:disabled { cursor: not-allowed; transform: none; }
-
-  /* Loading spinner inside button */
   .submit-btn .btn-text { display: inline-flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s; }
-  .submit-btn .spinner {
-    display: none; width: 18px; height: 18px;
-    border: 2px solid rgba(255,255,255,0.35);
-    border-top-color: white; border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-  }
+  .submit-btn .spinner { display: none; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.35); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .submit-btn.loading .spinner { display: inline-block; }
   .submit-btn.loading .btn-label { opacity: 0.7; }
-
-  /* Success state */
-  .submit-btn.success-state {
-    background: #1a8f55;
-    animation: pop 0.35s ease;
-  }
-  @keyframes pop {
-    0%   { transform: scale(1); }
-    40%  { transform: scale(1.04); }
-    100% { transform: scale(1); }
-  }
-
-  /* Checkmark draw animation */
-  .btn-check {
-    display: none; width: 20px; height: 20px; flex-shrink: 0;
-  }
-  .btn-check circle {
-    fill: none; stroke: white; stroke-width: 2;
-    stroke-dasharray: 63; stroke-dashoffset: 63;
-  }
-  .btn-check polyline {
-    fill: none; stroke: white; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
-    stroke-dasharray: 22; stroke-dashoffset: 22;
-  }
+  .submit-btn.success-state { background: var(--green); animation: pop 0.35s ease; }
+  @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.04); } 100% { transform: scale(1); } }
+  .btn-check { display: none; width: 20px; height: 20px; flex-shrink: 0; }
+  .btn-check circle { fill: none; stroke: white; stroke-width: 2; stroke-dasharray: 63; stroke-dashoffset: 63; }
+  .btn-check polyline { fill: none; stroke: white; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 22; stroke-dashoffset: 22; }
   .submit-btn.success-state .btn-check { display: inline-block; }
   .submit-btn.success-state .btn-check circle { animation: draw-circle 0.4s ease forwards 0.05s; }
   .submit-btn.success-state .btn-check polyline { animation: draw-check 0.3s ease forwards 0.35s; }
   @keyframes draw-circle { to { stroke-dashoffset: 0; } }
-  @keyframes draw-check  { to { stroke-dashoffset: 0; } }
+  @keyframes draw-check { to { stroke-dashoffset: 0; } }
   .submit-btn.success-state .spinner { display: none; }
 
   .form-msg { display: none; padding: 1rem; border-radius: 8px; font-size: 0.9rem; margin-top: 1rem; text-align: center; }
@@ -150,15 +194,18 @@
     section { padding: 3.5rem 1.25rem; }
     .trust-bar { gap: 1.25rem; }
     .form-row { grid-template-columns: 1fr; }
+    .day-grid { grid-template-columns: repeat(4, 1fr); }
+    .free-session-banner { flex-direction: column; text-align: center; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Maths<span>Tutor</span></a>
+  <a href="#" class="nav-logo">Maths<span>Tutorly</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#why">About</a></li>
     <li><a href="#booking" class="nav-cta">Book a Session</a></li>
   </ul>
@@ -170,7 +217,7 @@
     <h1>Maths tutoring that actually <em>clicks</em></h1>
     <p>One-on-one sessions tailored to your child's level and learning style — from Year 7 foundations through to HSC Advanced.</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="scrollToSection('booking')">Book a Free Consultation</button>
+      <button class="btn-primary" onclick="scrollToSection('booking')">Book a Free 30-Min Seesion</button>
       <button class="btn-outline" onclick="scrollToSection('services')">View Services</button>
     </div>
   </div>
@@ -191,44 +238,141 @@
   </div>
   <div class="trust-item">
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-    Personalised Programs
+    NESA-Aligned Programs
   </div>
 </div>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="section-inner">
     <div class="section-label">What We Offer</div>
     <h2 class="section-title">Programs for every stage</h2>
-    <p class="section-sub">Whether your child needs to build confidence or push for top marks, there's a program designed for them.</p>
+    <p class="section-sub">Whether your child needs to build confidence or push for top marks, there's a program designed for them — every session is NESA curriculum-aligned.</p>
     <div class="services-grid">
+
       <div class="service-card">
         <span class="service-year">Years 7 &amp; 8</span>
         <h3>Junior Maths</h3>
-        <p>Building strong foundations in number, algebra, and geometry to set students up for success in senior school.</p>
-        <div class="tag-list"><span class="tag">All abilities</span><span class="tag">Algebra basics</span><span class="tag">Number &amp; fractions</span><span class="tag">Geometry</span></div>
+        <p>Building strong foundations aligned to the NSW Mathematics K–10 Syllabus, covering number, algebra, measurement, and space.</p>
+        <div class="tag-list">
+          <span class="tag">Number &amp; Algebra</span><span class="tag">Ratios &amp; Rates</span><span class="tag">Geometry</span><span class="tag">Data &amp; Probability</span><span class="tag">Linear Equations</span>
+        </div>
+        <div class="included-title">Every student gets</div>
+        <ul class="included-list">
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Weekly exam-style homework questions</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>2 practice tests per term (test conditions)</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Real past-paper test questions used</li>
+        </ul>
       </div>
+
       <div class="service-card">
         <span class="service-year">Years 9 &amp; 10</span>
         <h3>Intermediate Maths</h3>
-        <p>Consolidating skills in preparation for senior years — covering trigonometry, quadratics, statistics, and more.</p>
-        <div class="tag-list"><span class="tag">All abilities</span><span class="tag">Trigonometry</span><span class="tag">Quadratics</span><span class="tag">Statistics</span></div>
+        <p>Consolidating skills across the NSW Stage 5 syllabus in preparation for senior years and HSC course selection.</p>
+        <div class="tag-list">
+          <span class="tag">Trigonometry</span><span class="tag">Quadratics</span><span class="tag">Surds &amp; Indices</span><span class="tag">Statistics</span><span class="tag">Linear &amp; Non-Linear</span>
+        </div>
+        <div class="included-title">Every student gets</div>
+        <ul class="included-list">
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Weekly exam-style homework questions</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>2 practice tests per term (test conditions)</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Real past-paper test questions used</li>
+        </ul>
       </div>
+
       <div class="service-card">
         <span class="service-year">Years 11 &amp; 12</span>
         <h3>Standard Maths</h3>
-        <p>Targeted HSC preparation for Standard Mathematics — maximising ATAR through focused exam technique and content mastery.</p>
-        <div class="tag-list"><span class="tag">HSC Standard</span><span class="tag">Exam technique</span><span class="tag">Past papers</span><span class="tag">ATAR focused</span></div>
+        <p>Targeted HSC preparation aligned to the Mathematics Standard 2 syllabus — focused on ATAR outcomes, exam technique, and content mastery.</p>
+        <div class="tag-list">
+          <span class="tag">Algebra &amp; Modelling</span><span class="tag">Measurement</span><span class="tag">Financial Maths</span><span class="tag">Statistical Analysis</span><span class="tag">Networks</span>
+        </div>
+        <div class="included-title">Every student gets</div>
+        <ul class="included-list">
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Weekly HSC exam-style homework questions</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>2 practice tests per term (test conditions)</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Real HSC past-paper questions used</li>
+        </ul>
       </div>
+
       <div class="service-card">
         <span class="service-year">Years 11 &amp; 12</span>
         <h3>Advanced Maths</h3>
-        <p>High-level HSC coaching for Advanced Mathematics — extension topics, proof, calculus, and exam mastery for ambitious students.</p>
-        <div class="tag-list"><span class="tag">HSC Advanced</span><span class="tag">Calculus</span><span class="tag">Extension topics</span><span class="tag">Band 6 focus</span></div>
+        <p>High-level HSC coaching aligned to the Mathematics Advanced syllabus — calculus, functions, statistical analysis, and exam mastery for ambitious students.</p>
+        <div class="tag-list">
+          <span class="tag">Functions</span><span class="tag">Calculus</span><span class="tag">Trigonometric Functions</span><span class="tag">Financial Maths</span><span class="tag">Statistical Analysis</span>
+        </div>
+        <div class="included-title">Every student gets</div>
+        <ul class="included-list">
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Weekly HSC exam-style homework questions</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>2 practice tests per term (test conditions)</li>
+          <li><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Real HSC past-paper questions used</li>
+        </ul>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing" style="background:var(--surface);">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, transparent rates</h2>
+    <p class="section-sub">No lock-in contracts. Sessions are available weekly or fortnightly — choose what works for your family.</p>
+
+    <div class="free-session-banner">
+      <div class="free-badge">
+        <svg fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="free-text">
+        <h3>Free 30-minute session — no obligation</h3>
+        <p>Your first session is a free 30-minute session where we assess your child's current level, identify gaps, and outline a personalised plan before any commitment is made.</p>
+      </div>
+    </div>
+
+    <div class="pricing-table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Year Level</th>
+            <th>Session Length</th>
+            <th>Per Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="year-badge">Years 7 &amp; 8</span></td>
+            <td>60 minutes</td>
+            <td class="price-val">$40</td>
+          </tr>
+          <tr>
+            <td><span class="year-badge">Years 7 &amp; 8</span></td>
+            <td>90 minutes</td>
+            <td class="price-val">$60</td>
+          </tr>
+          <tr>
+            <td><span class="year-badge">Years 9–12</span></td>
+            <td>60 minutes</td>
+            <td class="price-val">$55</td>
+          </tr>
+          <tr>
+            <td><span class="year-badge">Years 9–12</span></td>
+            <td>90 minutes</td>
+            <td class="price-val">$75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pricing-note">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      All sessions include weekly homework questions and 2 practice tests per term conducted under real test conditions using past-paper questions. Payment is due prior to each session via bank transfer.
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
 <section id="why">
   <div class="section-inner">
     <div class="section-label">Why Choose Us</div>
@@ -238,12 +382,22 @@
       <div class="why-item">
         <div class="why-icon"><svg width="22" height="22" fill="none" stroke="#2e82d4" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
         <h4>Tailored to each student</h4>
-        <p>No generic worksheets. Each session addresses your student's specific gaps and goals.</p>
+        <p>No generic worksheets. Each session addresses your student's specific gaps and goals, tracked from week to week.</p>
       </div>
       <div class="why-item">
         <div class="why-icon"><svg width="22" height="22" fill="none" stroke="#2e82d4" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h4>Curriculum-aligned</h4>
-        <p>All content is mapped directly to the NSW Mathematics curriculum and HSC syllabus.</p>
+        <h4>NESA curriculum-aligned</h4>
+        <p>All content is mapped directly to the NSW Mathematics syllabus and HSC NESA requirements.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg width="22" height="22" fill="none" stroke="#2e82d4" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h4>Weekly exam homework</h4>
+        <p>Exam-style questions set after every session to reinforce learning and build exam technique progressively.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg width="22" height="22" fill="none" stroke="#2e82d4" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h4>Practice tests each term</h4>
+        <p>Two full practice tests per term run under real test conditions with past-paper questions — so your child is never surprised.</p>
       </div>
       <div class="why-item">
         <div class="why-icon"><svg width="22" height="22" fill="none" stroke="#2e82d4" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
@@ -253,12 +407,13 @@
       <div class="why-item">
         <div class="why-icon"><svg width="22" height="22" fill="none" stroke="#2e82d4" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h4>Measurable progress</h4>
-        <p>Regular check-ins to track improvement, so you always know how your child is doing.</p>
+        <p>Regular check-ins to track improvement so you always know how your child is tracking against the syllabus.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- BOOKING -->
 <section id="booking">
   <div class="section-inner">
     <div class="booking-layout">
@@ -267,7 +422,7 @@
         <h2>Book a session</h2>
         <p>Fill in the form and I'll be in touch within 24 hours to confirm your booking and answer any questions.</p>
         <ul class="info-list">
-          <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>First consultation is free — no commitment required</li>
+          <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>First session is a free 30 minutes,no commitment required</li>
           <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sessions available in-person (Sydney) or online via Zoom</li>
           <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Weekdays from 3pm and weekends all day</li>
           <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>60 or 90 minute sessions available</li>
@@ -320,10 +475,16 @@
             </select>
           </div>
         </div>
+
+        <!-- Availability picker -->
         <div class="form-group">
-          <label for="availability">Preferred Days / Times</label>
-          <input type="text" id="availability" placeholder="e.g. Tuesday after 4pm, Saturday morning">
+          <label>Preferred Days &amp; Times</label>
+          <button type="button" class="avail-trigger" id="avail-trigger" onclick="openModal()">
+            <span id="avail-display">Click to select days &amp; times…</span>
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
         </div>
+
         <div class="form-group">
           <label for="notes">Anything else we should know?</label>
           <textarea id="notes" placeholder="e.g. upcoming exams, specific topics, current results..."></textarea>
@@ -348,28 +509,184 @@
 </section>
 
 <footer>
-  <p>© 2025 MathsTutor Sydney &nbsp;|&nbsp; <a href="tel:0434845134">0434 845 134</a> &nbsp;|&nbsp; <a href="mailto:toby.cutbush@gmail.com">toby.cutbush@gmail.com</a> &nbsp;|&nbsp; Sydney, NSW</p>
+  <p>© 2025 MathsTutorly Sydney &nbsp;|&nbsp; <a href="tel:0434845134">0434 845 134</a> &nbsp;|&nbsp; <a href="mailto:toby.cutbush@gmail.com">toby.cutbush@gmail.com</a> &nbsp;|&nbsp; Sydney, NSW</p>
 </footer>
 
+<!-- AVAILABILITY MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <h3>Select Preferred Availability</h3>
+      <button class="modal-close" onclick="closeModal()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-title">Step 1 — Select your preferred days</div>
+      <div class="day-grid">
+        <button class="day-btn" data-day="Mon" onclick="toggleDay(this)"><span class="day-short">Mon</span></button>
+        <button class="day-btn" data-day="Tue" onclick="toggleDay(this)"><span class="day-short">Tue</span></button>
+        <button class="day-btn" data-day="Wed" onclick="toggleDay(this)"><span class="day-short">Wed</span></button>
+        <button class="day-btn" data-day="Thu" onclick="toggleDay(this)"><span class="day-short">Thu</span></button>
+        <button class="day-btn" data-day="Fri" onclick="toggleDay(this)"><span class="day-short">Fri</span></button>
+        <button class="day-btn" data-day="Sat" onclick="toggleDay(this)"><span class="day-short">Sat</span></button>
+        <button class="day-btn" data-day="Sun" onclick="toggleDay(this)"><span class="day-short">Sun</span></button>
+      </div>
+
+      <div class="modal-section-title">Step 2 — Select preferred times for each day</div>
+      <div id="time-pickers">
+        <p class="no-days-msg">Select one or more days above to choose time slots.</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-btn-secondary" onclick="clearModal()">Clear all</button>
+      <button class="modal-btn-primary" onclick="confirmAvailability()">Confirm</button>
+    </div>
+  </div>
+</div>
+
 <script>
+  // ── Scroll helper ──
   function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
 
+  // ── Availability modal state ──
+  const selectedDays = new Set();
+  const selectedTimes = {}; // { 'Mon': Set(['3pm–4pm', ...]), ... }
+
+  const dayOrder = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+  const timeSlots = {
+    weekday: ['3:00pm','3:30pm','4:00pm','4:30pm','5:00pm','5:30pm','6:00pm','6:30pm','7:00pm'],
+    weekend: ['8:00am','8:30am','9:00am','9:30am','10:00am','10:30am','11:00am','11:30am','12:00pm','12:30pm','1:00pm','1:30pm','2:00pm','2:30pm','3:00pm','3:30pm','4:00pm']
+  };
+
+  function isWeekend(day) { return day === 'Sat' || day === 'Sun'; }
+
+  function openModal() {
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+  }
+
+  function toggleDay(btn) {
+    const day = btn.dataset.day;
+    if (selectedDays.has(day)) {
+      selectedDays.delete(day);
+      btn.classList.remove('selected');
+      delete selectedTimes[day];
+    } else {
+      selectedDays.add(day);
+      btn.classList.add('selected');
+      selectedTimes[day] = new Set();
+    }
+    renderTimePickers();
+  }
+
+  function renderTimePickers() {
+    const container = document.getElementById('time-pickers');
+    if (selectedDays.size === 0) {
+      container.innerHTML = '<p class="no-days-msg">Select one or more days above to choose time slots.</p>';
+      return;
+    }
+    container.innerHTML = '';
+    dayOrder.forEach(day => {
+      if (!selectedDays.has(day)) return;
+      const slots = isWeekend(day) ? timeSlots.weekend : timeSlots.weekday;
+      const section = document.createElement('div');
+      section.className = 'time-section';
+      section.innerHTML = `<div class="time-day-label">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        ${day}${isWeekend(day) ? '' : ' (from 3pm)'}
+      </div>
+      <div class="time-slots">
+        ${slots.map(t => `<button type="button" class="time-slot${selectedTimes[day] && selectedTimes[day].has(t) ? ' selected' : ''}" data-day="${day}" data-time="${t}" onclick="toggleTime(this)">${t}</button>`).join('')}
+      </div>`;
+      container.appendChild(section);
+    });
+  }
+
+  function toggleTime(btn) {
+    const { day, time } = btn.dataset;
+    if (!selectedTimes[day]) selectedTimes[day] = new Set();
+    if (selectedTimes[day].has(time)) {
+      selectedTimes[day].delete(time);
+      btn.classList.remove('selected');
+    } else {
+      selectedTimes[day].add(time);
+      btn.classList.add('selected');
+    }
+  }
+
+  function clearModal() {
+    selectedDays.clear();
+    Object.keys(selectedTimes).forEach(k => delete selectedTimes[k]);
+    document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('selected'));
+    renderTimePickers();
+  }
+
+  function confirmAvailability() {
+    if (selectedDays.size === 0) {
+      closeModal();
+      document.getElementById('avail-display').textContent = 'No preference — any time works';
+      document.getElementById('avail-trigger').classList.remove('open');
+      return;
+    }
+    const parts = [];
+    dayOrder.forEach(day => {
+      if (!selectedDays.has(day)) return;
+      const times = selectedTimes[day];
+      if (times && times.size > 0) {
+        parts.push(`${day}: ${[...times].join(', ')}`);
+      } else {
+        parts.push(`${day}: any time`);
+      }
+    });
+    const summary = parts.join(' | ');
+    document.getElementById('avail-display').textContent = summary;
+    document.getElementById('avail-trigger').style.color = 'var(--text)';
+    closeModal();
+  }
+
+  function getAvailabilityString() {
+    if (selectedDays.size === 0) return 'Not specified';
+    const parts = [];
+    dayOrder.forEach(day => {
+      if (!selectedDays.has(day)) return;
+      const times = selectedTimes[day];
+      if (times && times.size > 0) {
+        parts.push(`${day}: ${[...times].join(', ')}`);
+      } else {
+        parts.push(`${day}: any time`);
+      }
+    });
+    return parts.join(' | ');
+  }
+
+  // ── Form submission ──
   async function submitBooking() {
-    const btn  = document.getElementById('submit-btn');
-    const msg  = document.getElementById('form-msg');
+    const btn   = document.getElementById('submit-btn');
+    const msg   = document.getElementById('form-msg');
     const check = btn.querySelector('.btn-check');
     const text  = btn.querySelector('.btn-text');
 
-    const parentName   = document.getElementById('parent-name').value.trim();
-    const studentName  = document.getElementById('student-name').value.trim();
-    const phone        = document.getElementById('phone').value.trim();
-    const email        = document.getElementById('email').value.trim();
-    const year         = document.getElementById('year').value;
-    const sessionType  = document.getElementById('session-type').value;
-    const availability = document.getElementById('availability').value.trim();
-    const notes        = document.getElementById('notes').value.trim();
+    const parentName  = document.getElementById('parent-name').value.trim();
+    const studentName = document.getElementById('student-name').value.trim();
+    const phone       = document.getElementById('phone').value.trim();
+    const email       = document.getElementById('email').value.trim();
+    const year        = document.getElementById('year').value;
+    const sessionType = document.getElementById('session-type').value;
+    const notes       = document.getElementById('notes').value.trim();
+    const availability = getAvailabilityString();
 
     msg.className = 'form-msg';
     msg.style.display = 'none';
@@ -377,9 +694,6 @@
     if (!parentName || !studentName || !phone || !email || !year || !sessionType) {
       msg.textContent = 'Please fill in all required fields.';
       msg.className = 'form-msg error';
-      // Shake the button
-      btn.style.animation = 'none';
-      btn.style.transform = 'translateX(0)';
       btn.animate([
         {transform:'translateX(0)'},{transform:'translateX(-6px)'},
         {transform:'translateX(6px)'},{transform:'translateX(-4px)'},
@@ -388,7 +702,6 @@
       return;
     }
 
-    // Loading state
     btn.disabled = true;
     btn.classList.add('loading');
     btn.querySelector('.btn-label').textContent = 'Sending…';
@@ -402,47 +715,44 @@
         `Their Phone:     ${phone}\n` +
         `Their Email:     ${email}\n` +
         `Session Type:    ${sessionType}\n` +
-        `Availability:    ${availability || 'Not specified'}\n` +
+        `Availability:    ${availability}\n` +
         `Notes:           ${notes || 'None'}\n\n` +
-        `Submitted via the MathsTutor website.`;
+        `Submitted via the MathsTutorly website.`;
 
       const fd = new FormData();
-      fd.append('_replyto',     email);
-      fd.append('_subject',     `New Booking: ${studentName} (${year})`);
-      fd.append('message',      emailBody);
-      fd.append('student',      studentName);
-      fd.append('year',         year);
-      fd.append('parent',       parentName);
-      fd.append('phone',        phone);
-      fd.append('email',        email);
-      fd.append('session',      sessionType);
-      fd.append('availability', availability || 'Not specified');
-      fd.append('notes',        notes || 'None');
+      fd.append('_replyto', email);
+      fd.append('_subject', `New Booking: ${studentName} (${year})`);
+      fd.append('message',  emailBody);
+      fd.append('student',  studentName);
+      fd.append('year',     year);
+      fd.append('parent',   parentName);
+      fd.append('phone',    phone);
+      fd.append('email',    email);
+      fd.append('session',  sessionType);
+      fd.append('availability', availability);
+      fd.append('notes',    notes || 'None');
 
       const res = await fetch('https://formspree.io/f/mbdpjkvn', {
-        method:  'POST',
-        body:    fd,
-        headers: { 'Accept': 'application/json' }
+        method: 'POST', body: fd, headers: { 'Accept': 'application/json' }
       });
 
-      if (!res.ok) throw new Error('Submission failed');
+      if (!res.ok) throw new Error('failed');
 
-      // Success state — animated checkmark
       btn.classList.remove('loading');
       btn.classList.add('success-state');
       text.style.display = 'none';
       check.style.display = 'inline-block';
 
-      msg.textContent = '✓ Booking sent to mathstutorly@gmail.com — I\'ll be in touch within 24 hours!';
+      msg.textContent = '✓ Booking sent! I\'ll be in touch within 24 hours.';
       msg.className = 'form-msg success';
 
-      // Clear fields
-      ['parent-name','student-name','phone','email','availability','notes']
-        .forEach(id => document.getElementById(id).value = '');
+      ['parent-name','student-name','phone','email','notes'].forEach(id => document.getElementById(id).value = '');
       document.getElementById('year').value = '';
       document.getElementById('session-type').value = '';
+      clearModal();
+      document.getElementById('avail-display').textContent = 'Click to select days & times…';
+      document.getElementById('avail-trigger').style.color = '';
 
-      // Reset button after 4 seconds
       setTimeout(() => {
         btn.classList.remove('success-state');
         btn.disabled = false;
